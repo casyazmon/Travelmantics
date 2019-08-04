@@ -10,4 +10,5 @@
         android:title="@string/delete_deal"
         app:showAsAction="never"></item>
 
+
 </menu>
