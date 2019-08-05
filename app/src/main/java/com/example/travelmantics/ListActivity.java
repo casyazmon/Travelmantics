@@ -48,6 +48,7 @@ public class ListActivity extends AppCompatActivity {
                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                             public void onComplete(@NonNull Task<Void> task) {
                                 Log.d("Logout","User logout");
+                                FirebaseUtil.attachListener();
                             }
                         });
                 FirebaseUtil.detachListener();

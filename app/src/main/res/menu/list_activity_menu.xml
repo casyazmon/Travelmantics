@@ -4,11 +4,10 @@
     <item android:id="@+id/insert_menu"
         android:title="New Travel Deal"
         app:showAsAction="never">
-        <item
-            android:id="@+id/logout_menu"
-            android:title="@string/logout"
-            app:showAsAction="never"></item>
-
     </item>
+    <item
+        android:id="@+id/logout_menu"
+        android:title="@string/logout"
+        app:showAsAction="never"></item>
 
 </menu>
