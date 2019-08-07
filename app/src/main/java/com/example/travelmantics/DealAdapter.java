@@ -2,6 +2,8 @@ package com.example.travelmantics;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.media.Image;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +20,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -26,6 +29,7 @@ public class DealAdapter extends  RecyclerView.Adapter<DealAdapter.DealViewHolde
     private DatabaseReference mDatabaseReference;
     private ChildEventListener mChildListener;
     public static ArrayList<TravelDeal> deals;
+    private Image imageDeal;
 
     public DealAdapter() {
         mFirebaseDatabase = FirebaseUtil.mFirebaseDatabase;
@@ -98,6 +102,7 @@ public class DealAdapter extends  RecyclerView.Adapter<DealAdapter.DealViewHolde
             tvTitle = itemView.findViewById(R.id.tvTitle);
             tvDescription = itemView.findViewById(R.id.tvDescription);
             tvPrice = itemView.findViewById(R.id.tvPrice);
+            imageDeal = itemView.findViewById(R.id.imageDeal);
             itemView.setOnClickListener(this);
 
         }
@@ -106,6 +111,7 @@ public class DealAdapter extends  RecyclerView.Adapter<DealAdapter.DealViewHolde
             tvTitle.setText(deal.getTitle());
             tvDescription.setText(deal.getDescription());
             tvPrice.setText(deal.getPrice());
+            showImage(deal.getImageUrl());
         }
 
         @Override
@@ -116,6 +122,16 @@ public class DealAdapter extends  RecyclerView.Adapter<DealAdapter.DealViewHolde
             Intent intent = new Intent(view.getContext(), DealActivity.class);
             intent.putExtra("Deal",selectedDeal);
             view.getContext().startActivity(intent);
+        }
+
+        private void showImage(String url) {
+            if (url != null && url.isEmpty() == false) {
+                Picasso.get()
+                        .load(url)
+                        .resize(160, 160)
+                        .centerCrop()
+                        .into(imageDeal);
+            }
         }
     }
 }
