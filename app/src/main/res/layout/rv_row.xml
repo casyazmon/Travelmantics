@@ -3,16 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:layout_editor_absoluteY="81dp">
+    android:layout_height="wrap_content">
 
 
     <ImageView
         android:id="@+id/imageDeal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/text_margin_standard"
-        android:layout_marginLeft="@dimen/text_margin_standard"
+        android:layout_width="86dp"
+        android:layout_height="91dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="@dimen/text_margin_standard"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -20,32 +19,25 @@
 
     <TextView
         android:id="@+id/tvTitle"
+        android:textColor="#1F1B1B"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/text_margin_standard"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="@dimen/text_margin_standard"
-        android:layout_marginRight="@dimen/text_margin_standard"
+        android:layout_marginTop="@dimen/text_margin_standard"
         android:text="TextView"
         android:textSize="@dimen/title_large"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.054"
         app:layout_constraintStart_toEndOf="@+id/imageDeal"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="@dimen/text_margin_standard" />
 
     <TextView
         android:id="@+id/tvDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/text_margin_standard"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="@dimen/text_margin_standard"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="@dimen/text_margin_standard"
-        android:layout_marginRight="8dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.044"
         app:layout_constraintStart_toEndOf="@+id/imageDeal"
         app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
@@ -53,9 +45,8 @@
         android:id="@+id/tvPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginEnd="@dimen/text_margin_standard"
+        android:layout_marginRight="@dimen/text_margin_standard"
         android:text="TextView"
         android:textColor="@color/colorAccent"
         android:textSize="@dimen/text_price"
